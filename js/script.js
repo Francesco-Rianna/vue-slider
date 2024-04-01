@@ -65,6 +65,7 @@ createApp({
                 },
             ],
             activeItem: 0,
+            autoScroll: null
         };
 
     },
@@ -85,8 +86,19 @@ createApp({
         },
 
         clickImage: function (index) {
-            this.activeItem = index
+            this.activeItem = index;
 
+        },
+
+        startAutoPlay: function () {
+            this.autoScroll = setInterval(this.nextImage, 1000);
+        },
+
+        stopAutoPlay: function () {
+            clearInterval(this.autoScroll);
+        },
+        mounted() {
+            this.startAutoPlay();
         }
     },
 }).mount("#app");
