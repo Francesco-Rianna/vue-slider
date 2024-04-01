@@ -82,6 +82,11 @@ createApp({
             } else {
                 this.activeItem = this.slides.length - 1
             }
+        },
+
+        clickImage: function (index) {
+            this.activeItem = index
+
         }
     },
 }).mount("#app");
